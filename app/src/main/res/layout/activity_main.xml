@@ -12,6 +12,14 @@
         android:layout_height="wrap_content"
         tools:context=".MainActivity"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/dialog_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="스플래시 시간 설정하기"
+            android:textColor="@color/black"
+            android:backgroundTint="#c9c9c9"
+            android:textStyle="bold"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
