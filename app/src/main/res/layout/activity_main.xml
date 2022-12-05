@@ -9,17 +9,14 @@
     </data>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF"
+        android:paddingTop="50dp"
         tools:context=".MainActivity"
         android:orientation="vertical">
-        <Button
-            android:id="@+id/dialog_button"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="스플래시 시간 설정하기"
-            android:textColor="@color/black"
-            android:backgroundTint="#c9c9c9"
-            android:textStyle="bold"/>
+            android:layout_height="wrap_content"></ScrollView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,18 +24,18 @@
             android:layout_gravity="center">
             <ImageView
                 android:id="@+id/btn01"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:src="@drawable/bts_1"/>
             <ImageView
                 android:id="@+id/btn02"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:src="@drawable/bts_2"/>
             <ImageView
                 android:id="@+id/btn03"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:src="@drawable/bts_3"/>
         </LinearLayout>
         <LinearLayout
@@ -47,18 +44,18 @@
             android:gravity="center">
             <ImageView
                 android:id="@+id/btn04"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:src="@drawable/bts_4"/>
             <ImageView
                 android:id="@+id/btn05"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:src="@drawable/bts_5"/>
             <ImageView
                 android:id="@+id/btn06"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:src="@drawable/bts_6"/>
         </LinearLayout>
         <LinearLayout
@@ -67,15 +64,78 @@
             android:gravity="center">
             <ImageView
                 android:id="@+id/btn07"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:src="@drawable/bts_7"/>
+            <Button
+                android:id="@+id/dialog_button"
+                android:layout_width="240dp"
+                android:layout_height="120dp"
+                android:text="스플래시 시간 설정하기"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#c9c9c9"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
             <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"/>
+                android:id="@+id/twice01"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_1"/>
             <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"/>
+                android:id="@+id/twice02"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_2"/>
+            <ImageView
+                android:id="@+id/twice03"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_3"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/twice04"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_4"/>
+            <ImageView
+                android:id="@+id/twice05"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_5"/>
+            <ImageView
+                android:id="@+id/twice06"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_6"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/twice07"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_7"/>
+            <ImageView
+                android:id="@+id/twice08"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_8"/>
+            <ImageView
+                android:id="@+id/twice09"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:src="@drawable/member_9"/>
         </LinearLayout>
     </LinearLayout>
 

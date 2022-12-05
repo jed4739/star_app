@@ -11,17 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Star_app"
-        tools:targetApi="31">
+        tools:targetApi="32">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".BigImg"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".Splash"
-            android:theme="@style/Theme.SplashTheme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

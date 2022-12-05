@@ -26,10 +26,9 @@ public class Splash extends AppCompatActivity {
     }
     private void moveMain(int sec) {
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Log.i("splash","splash start");
+            Log.i("splash","실행 완료");
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
-            Log.i("splash", "splash finish");
             finish();
         },1000 * sec);
     }

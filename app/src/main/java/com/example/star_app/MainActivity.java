@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
 
         binding.dialogButton.setOnClickListener(v -> CustomDialog());
+
     }
+
     public AlertDialog CustomDialog() {
         Log.i("dialog", "dialog join");
         EditText input = new EditText(this);
@@ -66,9 +68,6 @@ public class MainActivity extends AppCompatActivity {
              dialog.dismiss();
              Log.i("dialog_cancel", "Dialog btn cancel");
             });
-
-
-
         return builder.show();
     }
 }
