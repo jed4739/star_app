@@ -23,19 +23,20 @@
             android:gravity="center"
             android:layout_gravity="center">
             <ImageView
-                android:id="@+id/bts01"
+                android:id="@+id/bts0"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bts_1"/>
+                android:src="@drawable/bts_1"
+                android:onClick="@{popup.fullScreen()}"/>
             <ImageView
-                android:id="@+id/bts02"
+                android:id="@+id/bts1"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/bts_2"/>
             <ImageView
-                android:id="@+id/bts03"
+                android:id="@+id/bts2"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
@@ -46,19 +47,19 @@
             android:layout_height="wrap_content"
             android:gravity="center">
             <ImageView
-                android:id="@+id/bts04"
+                android:id="@+id/bts3"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/bts_4"/>
             <ImageView
-                android:id="@+id/bts05"
+                android:id="@+id/bts4"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/bts_5"/>
             <ImageView
-                android:id="@+id/bts06"
+                android:id="@+id/bts5"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
@@ -69,17 +70,18 @@
             android:layout_height="wrap_content"
             android:gravity="center">
             <ImageView
-                android:id="@+id/bts07"
+                android:id="@+id/bts6"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/bts_7"/>
             <Button
                 android:id="@+id/dialog_button"
-                android:layout_width="240dp"
+                android:layout_width="235dp"
                 android:layout_height="120dp"
                 android:text="스플래시\n시간 설정"
                 android:textSize="30dp"
+                android:layout_marginLeft="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="#c9c9c9"
                 android:textStyle="bold"/>
@@ -89,19 +91,19 @@
             android:layout_height="wrap_content"
             android:gravity="center">
             <ImageView
-                android:id="@+id/twice01"
+                android:id="@+id/twice0"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/member_1"/>
             <ImageView
-                android:id="@+id/twice02"
+                android:id="@+id/twice1"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/member_2"/>
             <ImageView
-                android:id="@+id/twice03"
+                android:id="@+id/twice2"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
@@ -112,19 +114,19 @@
             android:layout_height="wrap_content"
             android:gravity="center">
             <ImageView
-                android:id="@+id/twice04"
+                android:id="@+id/twice3"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/member_4"/>
             <ImageView
-                android:id="@+id/twice05"
+                android:id="@+id/twice4"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/member_5"/>
             <ImageView
-                android:id="@+id/twice06"
+                android:id="@+id/twice5"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
@@ -135,19 +137,19 @@
             android:layout_height="wrap_content"
             android:gravity="center">
             <ImageView
-                android:id="@+id/twice07"
+                android:id="@+id/twice6"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/member_7"/>
             <ImageView
-                android:id="@+id/twice08"
+                android:id="@+id/twice7"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/member_8"/>
             <ImageView
-                android:id="@+id/twice09"
+                android:id="@+id/twice8"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"

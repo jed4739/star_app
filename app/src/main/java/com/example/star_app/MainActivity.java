@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -30,13 +31,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
+        /*
+        * SharedPreferences
+        * Map 형식으로 key, value 형식으로 반환
+        * 값을 수정할 수 있게 Editor 를 통해서 인터페이스의 새 인스턴스를 반환
+        * */
         sharedPreferences = getSharedPreferences("data", 0);
         editor = sharedPreferences.edit();
-
+        /*
+        * DataBinding
+        * 1. Splash
+        * 2. Img
+        * */
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.dialogButton.setOnClickListener(v -> CustomDialog());
-        binding.bts01.setOnClickListener(v -> fullScreen());
     }
 
     public AlertDialog CustomDialog() {
@@ -47,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
             .setView(input)
             .setPositiveButton("Ok", (dialog, which) -> {
                 try {
-                    int input_text = Integer.parseInt(input.getText().toString());
-                    if (input_text > 100) {
+                    int input_text = Integer.parseInt(input.getText().toString().trim());
+                    if (input_text > 120) {
                         Toast.makeText(getApplicationContext(), "스플래시 시간이 너무 길어요!", Toast.LENGTH_SHORT).show();
                     } else if(input_text <= 0) {
                         Toast.makeText(getApplicationContext(), "1보다 작을 수 없습니다!", Toast.LENGTH_SHORT).show();
