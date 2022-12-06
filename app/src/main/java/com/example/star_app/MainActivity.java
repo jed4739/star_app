@@ -4,10 +4,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -46,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         * */
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.dialogButton.setOnClickListener(v -> CustomDialog());
+        binding.bts1.setOnClickListener(v -> fullScreen());
     }
 
     public AlertDialog CustomDialog() {
