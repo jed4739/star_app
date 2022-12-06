@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
             .setNegativeButton("Cancel", (dialog, which) -> {
                 dialog.dismiss();
                 Log.i("dialog_cancel", "Dialog btn cancel");
+            })
+            .setNeutralButton("Reset", (dialog, which) -> {
+                editor.putInt("input_num", 3);
+                editor.commit();
+                Toast.makeText(getApplicationContext(), "기본 값(3초)로 변경되었습니다.",Toast.LENGTH_SHORT).show();
             });
         return builder.show();
     }

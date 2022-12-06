@@ -13,8 +13,6 @@ public class FullScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
          fullScreen = DataBindingUtil.setContentView(this, R.layout.activity_full_screen);
-
-
          fullScreen.backBtn.setOnClickListener(v -> { finish(); });
     }
 
