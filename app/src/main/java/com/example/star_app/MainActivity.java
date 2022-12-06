@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -49,12 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
     public AlertDialog CustomDialog() {
         Log.i("dialog", "dialog join");
-        EditText input = new EditText(this);
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
-            .setTitle("출력할 스플래시 시간을 입력하시오.")
-            .setView(input)
+            .setTitle("출력할 스플래시 시간을 입력해주세요.")
+            .setView(R.layout.dialog)
             .setPositiveButton("Ok", (dialog, which) -> {
                 try {
+                    Dialog f = (Dialog) dialog;
+                    EditText input = (EditText) f.findViewById(R.id.edit_dialog);
                     int input_text = Integer.parseInt(input.getText().toString().trim());
                     if (input_text > 120) {
                         Toast.makeText(getApplicationContext(), "스플래시 시간이 너무 길어요!", Toast.LENGTH_SHORT).show();

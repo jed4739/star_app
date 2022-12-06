@@ -11,6 +11,6 @@
         android:layout_height="match_parent"
         android:inputType="number"
         android:layout_marginLeft="20dp"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:layout_marginRight="20dp"/>
 </LinearLayout>
