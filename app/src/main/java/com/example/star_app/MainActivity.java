@@ -4,7 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import android.content.DialogInterface;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,8 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.star_app.databinding.Main;
-
-import java.util.logging.Logger;
 
 /*
 * 구현할 기능 리스트
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
 
         binding.dialogButton.setOnClickListener(v -> CustomDialog());
-
+        binding.bts01.setOnClickListener(v -> fullScreen());
     }
 
     public AlertDialog CustomDialog() {
@@ -65,9 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("dialog_ok", "Dialog btn ok");
             })
             .setNegativeButton("Cancel", (dialog, which) -> {
-             dialog.dismiss();
-             Log.i("dialog_cancel", "Dialog btn cancel");
+                dialog.dismiss();
+                Log.i("dialog_cancel", "Dialog btn cancel");
             });
         return builder.show();
+    }
+
+    public void fullScreen() {
+        Intent intent = new Intent(getApplicationContext(), FullScreen.class);
+        startActivity(intent);
     }
 }

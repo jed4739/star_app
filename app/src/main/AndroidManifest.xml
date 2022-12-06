@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Star_app"
         tools:targetApi="32">
         <activity
-            android:name=".BigImg"
+            android:name=".FullScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
