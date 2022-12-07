@@ -5,7 +5,7 @@
     <data class="Full">
         <variable
             name="fullScreen"
-            type="com.example.star_app.FullScreen" />
+            type="com.example.star_app.FullScreen"/>
     </data>
 
     <RelativeLayout
@@ -23,6 +23,5 @@
             android:id="@+id/imgView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
     </RelativeLayout>
 </layout>

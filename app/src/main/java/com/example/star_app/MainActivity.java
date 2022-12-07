@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.star_app.databinding.Main;
@@ -17,11 +18,11 @@ import com.example.star_app.databinding.Main;
 /*
 * 구현할 기능 리스트
 *
-* 1. Splash 의 sec(스플래시 초 객체)에 다이어로그 정수값을 입력시킬 방법 찾기 - complete
-* 2. 이미지 클릭 시 사진 전체화면
-* 3. 사진전체화면 후에는 뒤로가기 버튼
-* 4. 이미지 줌인 줌 아웃
-* 5. 트와이스까지 총 16명 이미지 생성
+* 1. Splash 의 sec(스플래시 초 객체)에 다이어로그 정수값을 입력시킬 방법 찾기 - 완
+* 2. 이미지 클릭 시 사진 전체화면 - 완
+* 3. 사진전체화면 후에는 뒤로가기 버튼 - 완
+* 4. 이미지 줌인 줌 아웃 - 미완
+* 5. 트와이스까지 총 16명 이미지 생성 - 완
 * */
 public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
@@ -30,25 +31,38 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         /*
-        * SharedPreferences
-        * Map 형식으로 key, value 형식으로 반환
-        * 값을 수정할 수 있게 Editor 를 통해서 인터페이스의 새 인스턴스를 반환
-        * */
+         * SharedPreferences
+         * Map 형식으로 key, value 형식으로 반환
+         * 값을 수정할 수 있게 Editor 를 통해서 인터페이스의 새 인스턴스를 반환
+         * */
         sharedPreferences = getSharedPreferences("data", 0);
         editor = sharedPreferences.edit();
         /*
-        * DataBinding
-        * 1. Splash
-        * 2. Img
-        * */
+         * DataBinding
+         * 1. Splash onclick
+         * 2. Img onclick
+         * */
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.dialogButton.setOnClickListener(v -> CustomDialog());
-        binding.bts1.setOnClickListener(v -> fullScreen());
+        binding.dialogButton.setOnClickListener(v -> SplashDialog());
+        ImageView[] btn = {binding.bts1, binding.bts2, binding.bts3, binding.bts4, binding.bts5, binding.bts6, binding.bts7, binding.twice1, binding.twice2, binding.twice3, binding.twice4, binding.twice5, binding.twice6, binding.twice7, binding.twice8, binding.twice9};
+        for (int i = 0; i < btn.length; i++) {
+            int j = i+1;
+            btn[i].setOnClickListener(v -> fullScreen(j));
+        }
     }
-
-    public AlertDialog CustomDialog() {
+    /**
+     * setPositiveButton
+     * 1. dialog.xml 에서 숫자만 받기로 명시되어 있지만 빈칸을 막기위해 예외처리를 함.
+     * 2. SharedPreferences 의 인스턴스에 저장하여 어플리케이션이 종료되어도 값이 저장되어있도록 함.
+     *
+     * setNegativeButton
+     * - dialog 가 종료하도록 설정함.
+     *
+     * setNeutralButton
+     * - 기본값이 3초라는 것을 강조하기위해 리셋버튼을 생성함.
+     * */
+    public void SplashDialog() {
         Log.i("dialog", "dialog join");
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
             .setTitle("출력할 스플래시 시간을 입력해주세요.")
@@ -56,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             .setPositiveButton("Ok", (dialog, which) -> {
                 try {
                     Dialog f = (Dialog) dialog;
-                    EditText input = (EditText) f.findViewById(R.id.edit_dialog);
+                    EditText input = f.findViewById(R.id.edit_dialog);
                     int input_text = Integer.parseInt(input.getText().toString().trim());
                     if (input_text > 120) {
                         Toast.makeText(getApplicationContext(), "스플래시 시간이 너무 길어요!", Toast.LENGTH_SHORT).show();
@@ -68,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "시간 설정 완료!", Toast.LENGTH_SHORT).show();
                     }
                 } catch (NumberFormatException e) {
-                    Toast.makeText(getApplicationContext(),"숫자만 가능합니다. 다시해주세요!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"다시 입력해주세요!", Toast.LENGTH_LONG).show();
                 }
                 Log.i("dialog_ok", "Dialog btn ok");
             })
@@ -81,11 +95,15 @@ public class MainActivity extends AppCompatActivity {
                 editor.commit();
                 Toast.makeText(getApplicationContext(), "기본 값(3초)로 변경되었습니다.",Toast.LENGTH_SHORT).show();
             });
-        return builder.show();
+        builder.show();
     }
-
-    public void fullScreen() {
+    /**
+     * onCreate 메소드에게서 이미지뷰의 순서를 기준으로 하는 번호를 매개변수로 받음.
+     * 매개변수로 받은 값은 FullScreen.java 로 넘김.
+     * */
+    public void fullScreen(int i) {
         Intent intent = new Intent(getApplicationContext(), FullScreen.class);
+        intent.putExtra("data", i);
         startActivity(intent);
     }
 }

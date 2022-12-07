@@ -16,7 +16,11 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences("data", 0);
         int input_num = sharedPreferences.getInt("input_num", -1);
-        moveMain(input_num);
+        if (sharedPreferences == null) {
+            moveMain(3);
+        } else {
+            moveMain(input_num);
+        }
     }
     private void moveMain(int sec) {
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
@@ -24,6 +28,6 @@ public class Splash extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
-        },1000 * sec);
+        }, 1000L * sec);
     }
 }
