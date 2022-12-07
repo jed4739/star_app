@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,9 +21,13 @@ public class Splash extends AppCompatActivity {
             moveMain(3);
         }
     }
+    /*
+     * SPLASH TIME METHOD
+     * Splash.java -> MainActivity.java
+     * 단위 : 1초 (1000L)
+     * */
     private void moveMain(int sec) {
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Log.i("splash","실행 완료");
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
