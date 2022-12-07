@@ -16,10 +16,10 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences("data", 0);
         int input_num = sharedPreferences.getInt("input_num", -1);
-        if (sharedPreferences == null) {
-            moveMain(3);
-        } else {
+        try {
             moveMain(input_num);
+        }catch (NullPointerException e) {
+            moveMain(3);
         }
     }
     private void moveMain(int sec) {
