@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
             .setTitle("출력할 스플래시 시간을 입력해주세요.")
             .setView(R.layout.dialog)
-            .setPositiveButton("Ok", (dialog, which) -> {
+            .setPositiveButton("확인", (dialog, which) -> {
                 try {
                     Dialog f = (Dialog) dialog;
                     EditText input = f.findViewById(R.id.edit_dialog);
@@ -86,11 +86,11 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Log.i("dialog_ok", "Dialog btn ok");
             })
-            .setNegativeButton("Cancel", (dialog, which) -> {
+            .setNegativeButton("취소", (dialog, which) -> {
                 dialog.dismiss();
                 Log.i("dialog_cancel", "Dialog btn cancel");
             })
-            .setNeutralButton("Reset", (dialog, which) -> {
+            .setNeutralButton("초기화", (dialog, which) -> {
                 editor.putInt("input_num", 3);
                 editor.commit();
                 Toast.makeText(getApplicationContext(), "기본 값(3초)로 변경되었습니다.",Toast.LENGTH_SHORT).show();
