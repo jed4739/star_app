@@ -19,7 +19,7 @@ import com.example.star_app.databinding.Main;
 * 1. Splash 의 sec(스플래시 초 객체)에 다이어로그 정수값을 입력시킬 방법 찾기 - 완
 * 2. 이미지 클릭 시 사진 전체화면 - 완
 * 3. 사진전체화면 후에는 뒤로가기 버튼 - 완
-* 4. 이미지 줌인 줌 아웃 - 미완
+* 4. 이미지 줌인 줌 아웃 - 완
 * 5. 트와이스까지 총 16명 이미지 생성 - 완
 * */
 public class MainActivity extends AppCompatActivity {
